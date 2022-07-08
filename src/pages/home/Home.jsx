@@ -5,6 +5,7 @@ import LeftChart from '../../components/leftChart/LeftChart'
 import Sidebar from '../../components/sidebar/Sidebar'
 import Widget from '../../components/widget/Widget'
 import './home.scss'
+import Table from '../../components/table/Table'
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
           <LeftChart/>
           <RightChart/>
         </div>
+        <Table/>
         </div>
 
     </div>
