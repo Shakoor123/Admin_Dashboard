@@ -1,6 +1,7 @@
 import './newTable.scss'
 import * as React from 'react';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { Link } from 'react-router-dom';
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -21,6 +22,13 @@ const columns: GridColDef[] = [
     valueGetter: (params: GridValueGetterParams) =>
       `${params.row.firstName || ''} ${params.row.lastName || ''}`,
   },
+  {
+    field:"status",
+    headerName:"status",
+    sortable: false,
+    width: 260,
+
+  }
 ];
 
 const rows = [
@@ -33,17 +41,23 @@ const rows = [
   { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
   { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
   { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+  { id: 10, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+
 ];
 
 export default function NewTable() {
   return (
-    <div style={{ height: 400, width: '100%' }}>
+    <div style={{ height: 600, width: '100%' }}>
+      <Link to={'/new'}>
+      <button className='button'>Add New</button>
+      </Link>
       <DataGrid
         rows={rows}
         columns={columns}
-        pageSize={5}
+        pageSize={9}
         rowsPerPageOptions={[5]}
         checkboxSelection
+        
       />
     </div>
   );

@@ -1,0 +1,17 @@
+.app.dark{
+    background-color: #111;
+    color: aliceblue;
+    .chartGrid{
+        stroke:white;
+    }
+    .list{
+        background-color: #222;
+        color: rgba(255, 255, 255, 0.168);
+        .tableCell{
+            color: gray;
+        }
+    }
+    .navbar{
+        background-color: rgba(0, 0, 0, 0.445);
+    }
+}
