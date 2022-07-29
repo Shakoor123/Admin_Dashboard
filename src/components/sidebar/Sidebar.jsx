@@ -11,8 +11,11 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/darkmodeContext";
 
 function Sidebar() {
+  const {setDark}=useContext(AuthContext)
   return (
     <div className="sidebar">
       <Link to={"/"} style={{ textDecoration: "none" }}>
@@ -79,8 +82,14 @@ function Sidebar() {
         </ul>
       </div>
       <div className="bottom">
-        <div className="color"></div>
-        <div className="color"></div>
+        <div className="color" onClick={()=>{
+          setDark(false)
+        }}></div>
+        <div className="color"
+        onClick={()=>{
+          setDark(true)
+        }}
+        ></div>
       </div>
     </div>
   );

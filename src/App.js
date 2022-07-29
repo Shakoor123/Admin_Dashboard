@@ -10,9 +10,13 @@ import Login from './pages/login/Login';
 import New from './pages/new/New';
 import Single from './pages/single/Single';
 import './style/dark.scss'
+import { useContext } from 'react';
+import { AuthContext } from './context/darkmodeContext';
 function App() {
+  const {dark}=useContext(AuthContext)
+
   return (
-    <div className="app dark">
+    <div className={dark ? "app dark":"app"}>
        <BrowserRouter>
     <Routes>
       <Route path={'/'} element={<Home/>} />
